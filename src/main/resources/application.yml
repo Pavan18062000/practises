@@ -1,0 +1,20 @@
+server:
+  port: 5000
+
+
+spring:
+  datasource:
+    url: ${MYSQL_URL}
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
+    driver-class-name: ${MYSQL_DRIVER}
+    hikari:
+      maximumPoolSize: 500
+      idleTimeout: 120000
+      connectionTimeout: 300000
+      leakDetectionThreshold: 300000
+
+  servlet:
+    multipart:
+      max-file-size: 126MB
+      max-request-size: 126MB
