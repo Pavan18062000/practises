@@ -15,19 +15,18 @@ import com.student.service.StudentService;
 @RestController
 @RequestMapping("/student")
 public class StudentController {
-	
-	
 	@Autowired
 	StudentService studentService;
-	
-	
 	@PostMapping("/addStudent")
 	public Student addStudent(@RequestBody Student student) {
 		return studentService.addStudent(student);
 		
 	}
 	
-	
+	@GetMapping("/getAllStudent")
+	public List<Student> getAllStudent(){
+		return studentService.getAllStudent();
+	}
 	
 
 }
